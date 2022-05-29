@@ -7,7 +7,7 @@ class History extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("data"),
+        title: const Text("History"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
