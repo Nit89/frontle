@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontle/components/grid.dart';
 import 'package:frontle/components/keyboard_row.dart';
 
 class FrontleScreen extends StatefulWidget {
@@ -120,24 +121,7 @@ class _FrontleScreenState extends State<FrontleScreen> {
             Expanded(
               flex: 7,
               child: Container(
-                child: GridView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: 30,
-                    padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 6,
-                        mainAxisSpacing: 15,
-                        crossAxisSpacing: 15),
-                    itemBuilder: (context, index) {
-                      return Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            // color: Color(0xffEFF8FF)
-                            color: Color.fromARGB(255, 179, 87, 81)),
-                        //child: Center(child: Text(index.toString())),
-                      );
-                    }),
+                child: Grid(),
               ),
             ),
             Expanded(

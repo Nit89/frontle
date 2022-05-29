@@ -1,5 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:frontle/controller.dart';
+import 'package:frontle/data/words.dart';
 import 'package:frontle/screens/screen1.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -9,6 +14,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  late String _word;
+  @override
+  void initState() {
+    final r = Random().nextInt(words.length);
+    _word = words[r];
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<Controller>(context, listen: false)
+          .setCorrectWord(word: _word);
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
