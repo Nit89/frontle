@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
 import 'package:frontle/screens/frontlyne_content.dart';
+import 'package:frontle/screens/historyscreen.dart';
 import 'package:frontle/screens/screen1.dart';
 import 'package:frontle/screens/test.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const History(),
       // initialRoute: '/',
       // routes: {
       //   '/': (context) => TEST(),
