@@ -261,14 +261,39 @@ class History extends StatelessWidget {
                                     itemBuilder: (context, index) {
                                       return Padding(
                                         padding: const EdgeInsets.all(10.0),
-                                        child: Container(
-                                          decoration: const BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: Color(0xff2E8BF7),
-                                          ),
-                                          child: Image.asset(
-                                            'assets/images/badge1.png',
-                                            fit: BoxFit.scaleDown,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            showDialog(
+                                                barrierColor:
+                                                    Colors.transparent,
+                                                context: context,
+                                                builder:
+                                                    (BuildContext context) {
+                                                  return AlertDialog(
+                                                    backgroundColor:
+                                                        Color(0xFF2E8BF7)
+                                                            .withOpacity(0.95),
+                                                    content: Container(
+                                                      width: 292,
+                                                      height: 158,
+                                                      decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      25)),
+                                                    ),
+                                                  );
+                                                });
+                                          },
+                                          child: Container(
+                                            decoration: const BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Color(0xff2E8BF7),
+                                            ),
+                                            child: Image.asset(
+                                              'assets/images/badge1.png',
+                                              fit: BoxFit.scaleDown,
+                                            ),
                                           ),
                                         ),
                                       );
