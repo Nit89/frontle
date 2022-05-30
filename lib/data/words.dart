@@ -1,5 +1,5 @@
 const List<String> words = [
-  'PIZZA'
+  'PIZZAS'
       'ABROAD'
       'ACROSS'
 ];
