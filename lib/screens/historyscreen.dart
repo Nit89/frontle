@@ -270,17 +270,49 @@ class History extends StatelessWidget {
                                                 builder:
                                                     (BuildContext context) {
                                                   return AlertDialog(
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        15)),
                                                     backgroundColor:
                                                         Color(0xFF2E8BF7)
                                                             .withOpacity(0.95),
                                                     content: Container(
                                                       width: 292,
                                                       height: 158,
-                                                      decoration: BoxDecoration(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      25)),
+                                                      // decoration: BoxDecoration(
+                                                      //     borderRadius:
+                                                      //         BorderRadius
+                                                      //             .circular(
+                                                      //                 25)),
+                                                      child: Column(
+                                                        children: [
+                                                          Text(
+                                                            "BRAINY",
+                                                            style: TextStyle(
+                                                              fontSize: 13,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                          ),
+                                                          SizedBox(
+                                                            height: 7,
+                                                          ),
+                                                          Text(
+                                                            "This badge is awarded when you get\n the word right in your first guess! ",
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w300,
+                                                                fontSize: 13,
+                                                                color: Color(
+                                                                    0xffFFFFFF)),
+                                                          )
+                                                        ],
+                                                      ),
                                                     ),
                                                   );
                                                 });
