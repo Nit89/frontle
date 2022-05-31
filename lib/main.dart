@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
-import 'package:frontle/screens/frontlyne_content.dart';
 import 'package:frontle/screens/historyscreen.dart';
-import 'package:frontle/screens/screen1.dart';
-import 'package:frontle/screens/test.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -18,18 +16,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'FRONTLYNE',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const History(),
-      // initialRoute: '/',
-      // routes: {
-      //   '/': (context) => TEST(),
-      //   '/second': (context) => FrontleScreen(),
-      // },
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'FRONTLYNE',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const History(),
+        // initialRoute: '/',
+        // routes: {
+        //   '/': (context) => TEST(),
+        //   '/second': (context) => FrontleScreen(),
+        // },
+      );
+    });
   }
 }
