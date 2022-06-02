@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Reward(),
+        home: Reward(),
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => TEST(),

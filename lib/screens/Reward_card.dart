@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:scratcher/scratcher.dart';
 
-class Reward extends StatelessWidget {
-  const Reward({Key? key}) : super(key: key);
+class Reward extends StatefulWidget {
+  Reward({Key? key}) : super(key: key);
+
+  @override
+  State<Reward> createState() => _RewardState();
+}
+
+class _RewardState extends State<Reward> {
+  bool text = true;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +128,7 @@ class Reward extends StatelessWidget {
             Center(
               child: Container(
                 width: 342,
-                height: 500,
+                height: 488,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: const Color(0xff123563)),
@@ -263,43 +270,74 @@ class Reward extends StatelessWidget {
                               height: 25,
                             ),
                             Scratcher(
-                                accuracy: ScratchAccuracy.low,
-                                brushSize: 50,
-                                image: Image.asset(
-                                    'assets/images/scratchcard.png'),
+                              color: Color(0xff123563),
+                              accuracy: ScratchAccuracy.low,
+                              brushSize: 50,
+                              onScratchStart: () {
+                                setState(() {
+                                  text = false;
+                                });
+                              },
+                              image: Image.asset(
+                                'assets/images/scratchcard.png',
+                                fit: BoxFit.fill,
+                              ),
+                              child: Container(
+                                height: 260,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)),
                                 child: Container(
-                                  height: 243,
-                                  width: 251,
+                                  height: 260,
+                                  width: 250,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10)),
-                                  child: Container(
-                                    height: 260,
-                                    width: 255,
-                                    color: Colors.white,
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Image.asset(
-                                              'assets/images/brainy.png'),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(15)),
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Image.asset(
+                                          'assets/images/brainy.png',
+                                          fit: BoxFit.contain,
                                         ),
-                                        const Text(
-                                          'BRAINY',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 20,
-                                              color: Color(0xff2E8BF7)),
+                                      ),
+                                      const Text(
+                                        'BRAINY',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 20,
+                                            color: Color(0xff2E8BF7)),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      const Text(
+                                        'You got the word right in your \n                first guess!',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13,
+                                          color: Color(0xff123563),
                                         ),
-                                        const Text(
-                                            'You got the word right in your \n             first guess!',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 13,
-                                                color: Color(0xff123563))),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                ))
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            text
+                                ? Text(
+                                    'Scratch to know what you won!',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                : SizedBox()
                           ],
                         ),
                       ),
