@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
-import 'package:frontle/screens/historyscreen.dart';
+import 'package:frontle/screens/Reward_card.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const History(),
+        home: const Reward(),
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => TEST(),
