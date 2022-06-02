@@ -7,7 +7,7 @@ import 'package:frontle/screens/screen1.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     final r = Random().nextInt(words.length);
     _word = words[r];
+
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Provider.of<Controller>(context, listen: false)
           .setCorrectWord(word: _word);
@@ -31,12 +32,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
+        leading: const Icon(
           Icons.keyboard_arrow_left_outlined,
           size: 30,
         ),
-        backgroundColor: Color(0xff123563),
-        title: Text('FRONTLYNE'),
+        backgroundColor: const Color(0xff123563),
+        title: const Text('FRONTLYNE'),
         centerTitle: true,
         elevation: 0,
       ),
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
+                children: const [
                   Text(
                     'CONTENT',
                     style: TextStyle(
@@ -63,18 +64,18 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Container(
                 width: 345,
                 height: 120,
                 decoration: BoxDecoration(
-                  color: Color(0xff123563),
+                  color: const Color(0xff123563),
                   border: Border.all(
                     color: Colors.black,
                   ),
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(16),
                   ),
                 ),
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
+                      const Text(
                         "   FYI",
                         style: TextStyle(
                             color: Colors.white,
@@ -97,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
-                            children: [
+                            children: const [
                               CircleAvatar(
                                 backgroundColor: Color(0xff2E8BF7),
                                 radius: 30,
@@ -158,36 +159,36 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 23,
               ),
               Container(
                 width: 345,
                 height: 440,
                 decoration: BoxDecoration(
-                  color: Color(0xff123563),
+                  color: const Color(0xff123563),
                   border: Border.all(
                     color: Colors.black,
                   ),
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(16),
                   ),
                 ),
                 child: SingleChildScrollView(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   child: Padding(
                     padding: const EdgeInsets.all(34.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Games",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 17,
                               fontWeight: FontWeight.w600),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Padding(
@@ -195,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             width: 262,
                             height: 148,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
                                 Radius.circular(16),
@@ -221,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Padding(
@@ -229,7 +230,7 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             width: 262,
                             height: 148,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.all(
                                 Radius.circular(16),

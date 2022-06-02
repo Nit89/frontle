@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/constants/answer_stage.dart';
+import 'package:frontle/data/keys_map.dart';
 import 'package:frontle/model/tile_model.dart';
 
 class Controller extends ChangeNotifier {
@@ -12,6 +13,7 @@ class Controller extends ChangeNotifier {
     if (value == 'ENTER') {
       if (currentTile == 6 * (currentRow + 1)) {
         checkWord();
+        print(correctWord);
       }
     } else if (value == 'BACK') {
       if (currentTile > 6 * (currentRow + 1) - 6) {
@@ -39,12 +41,14 @@ class Controller extends ChangeNotifier {
     if (guessedWord == correctWord) {
       for (int i = currentRow * 6; i < (currentRow * 6) + 6; i++) {
         titlesEntered[i].answerStage = AnswerStage.correct;
+        keysMap.update(titlesEntered[i].letter, (value) => AnswerStage.correct);
       }
     } else {
       for (int i = 0; i < 6; i++) {
         if (guessedWord[i] == correctWord[i]) {
           remainingCorrect.remove(guessedWord[i]);
           titlesEntered[i + (currentRow * 5)].answerStage = AnswerStage.correct;
+          keysMap.update(guessedWord[i], (value) => AnswerStage.correct);
         }
       }
       for (int i = 0; i < remainingCorrect.length; i++) {
@@ -55,6 +59,12 @@ class Controller extends ChangeNotifier {
                 AnswerStage.correct) {
               titlesEntered[j + (currentRow * 6)].answerStage =
                   AnswerStage.contains;
+            }
+            final resultKey = keysMap.entries.where((element) =>
+                element.key == titlesEntered[j + (currentRow)].letter);
+            if (resultKey.single.value != AnswerStage.correct) {
+              keysMap.update(
+                  resultKey.single.key, (value) => AnswerStage.contains);
             }
           }
         }
