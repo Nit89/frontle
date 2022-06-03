@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/components/grid.dart';
 import 'package:frontle/components/keyboard_row.dart';
+import 'package:frontle/screens/cluescreen.dart';
 
 class FrontleScreen extends StatefulWidget {
   const FrontleScreen({Key? key}) : super(key: key);
@@ -81,18 +82,29 @@ class _FrontleScreenState extends State<FrontleScreen> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 42,
-                      height: 42,
-                      decoration: const BoxDecoration(
-                        color: Color(0xff123563),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(8),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          barrierColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return const ClueScreen();
+                          },
+                        );
+                      },
+                      child: Container(
+                        width: 42,
+                        height: 42,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff123563),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
                         ),
-                      ),
-                      child: Image.asset(
-                        'assets/images/bulb.png',
-                        fit: BoxFit.scaleDown,
+                        child: Image.asset(
+                          'assets/images/bulb.png',
+                          fit: BoxFit.scaleDown,
+                        ),
                       ),
                     ),
                     const SizedBox(

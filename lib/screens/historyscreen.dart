@@ -79,18 +79,20 @@ class History extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Container(
-                        width: 42,
-                        height: 42,
-                        decoration: const BoxDecoration(
-                          color: Color(0xff123563),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(8),
+                      GestureDetector(
+                        child: Container(
+                          width: 42,
+                          height: 42,
+                          decoration: const BoxDecoration(
+                            color: Color(0xff123563),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(8),
+                            ),
                           ),
-                        ),
-                        child: Image.asset(
-                          'assets/images/bulb.png',
-                          fit: BoxFit.scaleDown,
+                          child: Image.asset(
+                            'assets/images/bulb.png',
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ),
                       const SizedBox(
