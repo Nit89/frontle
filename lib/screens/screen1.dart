@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/components/grid.dart';
 import 'package:frontle/components/keyboard_row.dart';
+import 'package:frontle/screens/cluescreen.dart';
+import 'package:frontle/screens/info.dart';
 
 class FrontleScreen extends StatefulWidget {
-  FrontleScreen({Key? key}) : super(key: key);
+  const FrontleScreen({Key? key}) : super(key: key);
 
   @override
   State<FrontleScreen> createState() => _FrontleScreenState();
@@ -14,8 +16,8 @@ class _FrontleScreenState extends State<FrontleScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff123563),
-        title: Text('FRONTLYNE'),
+        backgroundColor: const Color(0xff123563),
+        title: const Text('FRONTLYNE'),
         centerTitle: true,
         elevation: 0,
       ),
@@ -29,12 +31,12 @@ class _FrontleScreenState extends State<FrontleScreen> {
               children: [
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       "80",
                       style: TextStyle(
                           fontSize: 14.9, fontWeight: FontWeight.w500),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Image.asset(
@@ -44,21 +46,31 @@ class _FrontleScreenState extends State<FrontleScreen> {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   "FRONTLE",
                   style: TextStyle(
                       fontSize: 27,
                       color: Color(0xff123563),
                       fontWeight: FontWeight.w500),
                 ),
-                Icon(
-                  Icons.info_outline_rounded,
-                  color: Color(0xff707070),
-                  size: 22,
+                GestureDetector(
+                  onTap: (() {
+                    showDialog(
+                        barrierColor: Colors.transparent,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return infoscreen();
+                        });
+                  }),
+                  child: const Icon(
+                    Icons.info_outline_rounded,
+                    color: Color(0xff707070),
+                    size: 22,
+                  ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
@@ -84,27 +96,38 @@ class _FrontleScreenState extends State<FrontleScreen> {
                 ),
                 Column(
                   children: [
-                    Container(
-                      width: 42,
-                      height: 42,
-                      decoration: BoxDecoration(
-                        color: Color(0xff123563),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(8),
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          barrierColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return const ClueScreen();
+                          },
+                        );
+                      },
+                      child: Container(
+                        width: 42,
+                        height: 42,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff123563),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                        ),
+                        child: Image.asset(
+                          'assets/images/bulb.png',
+                          fit: BoxFit.scaleDown,
                         ),
                       ),
-                      child: Image.asset(
-                        'assets/images/bulb.png',
-                        fit: BoxFit.scaleDown,
-                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Row(
                       children: [
-                        Text("10"),
-                        SizedBox(
+                        const Text("10"),
+                        const SizedBox(
                           width: 5,
                         ),
                         Image.asset(
@@ -118,19 +141,19 @@ class _FrontleScreenState extends State<FrontleScreen> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
               flex: 7,
               child: Container(
-                child: Grid(),
+                child: const Grid(),
               ),
             ),
             Expanded(
               flex: 4,
               child: Column(
-                children: [
+                children: const [
                   KeyboardRow(
                     min: 1,
                     max: 10,
