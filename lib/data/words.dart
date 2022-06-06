@@ -1,5 +1,1 @@
-const List<String> words = [
-  'PIZZAS'
-      'ABROAD'
-      'ACROSS'
-];
+const List<String> words = ['ABROAD', 'ACROSS', 'CAREER'];

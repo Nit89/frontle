@@ -78,7 +78,7 @@ class _FrontleScreenState extends State<FrontleScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
-                  onTap: (() {}),
+                  onTap: () {},
                   child: Container(
                     width: 42,
                     height: 42,
