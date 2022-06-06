@@ -82,7 +82,7 @@ class _FrontleScreenState extends State<FrontleScreen> {
                   child: Container(
                     width: 42,
                     height: 42,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xff123563),
                       borderRadius: BorderRadius.all(
                         Radius.circular(8),
