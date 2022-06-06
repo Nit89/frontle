@@ -77,18 +77,21 @@ class _FrontleScreenState extends State<FrontleScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 42,
-                  height: 42,
-                  decoration: const BoxDecoration(
-                    color: Color(0xff123563),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
+                GestureDetector(
+                  onTap: (() {}),
+                  child: Container(
+                    width: 42,
+                    height: 42,
+                    decoration: const BoxDecoration(
+                      color: Color(0xff123563),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(8),
+                      ),
                     ),
-                  ),
-                  child: Image.asset(
-                    'assets/images/bar.png',
-                    fit: BoxFit.scaleDown,
+                    child: Image.asset(
+                      'assets/images/bar.png',
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                 ),
                 Column(
