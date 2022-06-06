@@ -66,7 +66,7 @@ class History extends StatelessWidget {
                   Container(
                     width: 42,
                     height: 42,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xff123563),
                       borderRadius: BorderRadius.all(
                         Radius.circular(8),
