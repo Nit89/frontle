@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
+import 'package:frontle/screens/frontlyne_content.dart';
 import 'package:frontle/screens/screen1.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FrontleScreen(),
+        home: const HomePage(),
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => TEST(),

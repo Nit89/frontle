@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontle/components/grid.dart';
 import 'package:frontle/components/keyboard_row.dart';
 import 'package:frontle/screens/cluescreen.dart';
+import 'package:frontle/screens/historyscreen.dart';
 import 'package:frontle/screens/info.dart';
 
 class FrontleScreen extends StatefulWidget {
@@ -78,7 +79,12 @@ class _FrontleScreenState extends State<FrontleScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => History()),
+                    );
+                  },
                   child: Container(
                     width: 42,
                     height: 42,
