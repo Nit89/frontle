@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontle/components/grid.dart';
 import 'package:frontle/components/keyboard_row.dart';
 import 'package:frontle/screens/cluescreen.dart';
+import 'package:frontle/screens/info.dart';
 
 class FrontleScreen extends StatefulWidget {
   const FrontleScreen({Key? key}) : super(key: key);
@@ -52,10 +53,20 @@ class _FrontleScreenState extends State<FrontleScreen> {
                       color: Color(0xff123563),
                       fontWeight: FontWeight.w500),
                 ),
-                const Icon(
-                  Icons.info_outline_rounded,
-                  color: Color(0xff707070),
-                  size: 22,
+                GestureDetector(
+                  onTap: (() {
+                    showDialog(
+                        barrierColor: Colors.transparent,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return infoscreen();
+                        });
+                  }),
+                  child: const Icon(
+                    Icons.info_outline_rounded,
+                    color: Color(0xff707070),
+                    size: 22,
+                  ),
                 )
               ],
             ),
