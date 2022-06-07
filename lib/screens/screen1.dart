@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frontle/components/grid.dart';
 import 'package:frontle/components/keyboard_row.dart';
+import 'package:frontle/screens/Reward_card.dart';
 import 'package:frontle/screens/cluescreen.dart';
+import 'package:frontle/screens/history.dart';
 import 'package:frontle/screens/historyscreen.dart';
 import 'package:frontle/screens/info.dart';
 
@@ -40,10 +42,21 @@ class _FrontleScreenState extends State<FrontleScreen> {
                     const SizedBox(
                       width: 5,
                     ),
-                    Image.asset(
-                      'assets/images/coins.png',
-                      width: 17,
-                      height: 17,
+                    GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          barrierColor: Colors.transparent,
+                          context: context,
+                          builder: (context) {
+                            return HistoryScreen();
+                          },
+                        );
+                      },
+                      child: Image.asset(
+                        'assets/images/coins.png',
+                        width: 17,
+                        height: 17,
+                      ),
                     ),
                   ],
                 ),
@@ -80,9 +93,12 @@ class _FrontleScreenState extends State<FrontleScreen> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => History()),
+                    showDialog(
+                      barrierColor: Colors.transparent,
+                      context: context,
+                      builder: (context) {
+                        return Reward();
+                      },
                     );
                   },
                   child: Container(

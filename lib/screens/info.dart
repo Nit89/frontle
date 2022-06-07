@@ -23,9 +23,14 @@ class infoscreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(''),
-                Image.asset(
-                  'assets/images/Subtract.png',
-                  fit: BoxFit.scaleDown,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Image.asset(
+                    'assets/images/Subtract.png',
+                    fit: BoxFit.scaleDown,
+                  ),
                 ),
               ],
             ),

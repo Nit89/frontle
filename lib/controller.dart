@@ -13,7 +13,6 @@ class Controller extends ChangeNotifier {
     if (value == 'ENTER') {
       if (currentTile == 6 * (currentRow + 1)) {
         checkWord();
-        print(correctWord);
       }
     } else if (value == 'BACK') {
       if (currentTile > 6 * (currentRow + 1) - 6) {
