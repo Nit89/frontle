@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
 import 'package:frontle/screens/frontlyne_content.dart';
 import 'package:frontle/screens/screen1.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
+      return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'FRONTLYNE',
         theme: ThemeData(
