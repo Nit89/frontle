@@ -1,15 +1,18 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
 import 'package:frontle/screens/frontlyne_content.dart';
-import 'package:frontle/screens/screen1.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
-  runApp(MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => Controller())],
-      child: const MyApp()));
+  runApp(DevicePreview(
+    enabled: true,
+    builder: (context) => MultiProvider(
+        providers: [ChangeNotifierProvider(create: (_) => Controller())],
+        child: const MyApp()),
+  ));
 }
 
 class MyApp extends StatelessWidget {

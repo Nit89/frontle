@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("current height " + MediaQuery.of(context).size.height.toString());
+    print("current height ${MediaQuery.of(context).size.height}");
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               width: 345,
-              height: Dimension.frontlineconatiner,
+              height: Dimension.Gamesconatinerheight,
               decoration: BoxDecoration(
                 color: const Color(0xff123563),
                 border: Border.all(
@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           width: 262,
-                          height: 148,
+                          height: Dimension.frontleconatinerheight,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(
@@ -211,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              FrontleScreen()),
+                                              const FrontleScreen()),
                                     );
                                   },
                                   child: Image.asset(
@@ -229,7 +229,7 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           width: 262,
-                          height: 148,
+                          height: Dimension.frontleconatinerheight,
                           decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(
