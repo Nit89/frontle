@@ -2,6 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
 import 'package:frontle/screens/frontlyne_content.dart';
+import 'package:frontle/screens/test.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const HomePage(),
+        home: TEST(),
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => TEST(),
