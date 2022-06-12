@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:scratcher/scratcher.dart';
 
 class Reward extends StatefulWidget {
-  Reward({Key? key}) : super(key: key);
+  const Reward({Key? key}) : super(key: key);
 
   @override
   State<Reward> createState() => _RewardState();
@@ -15,7 +15,7 @@ class _RewardState extends State<Reward> {
   Widget build(BuildContext context) {
     return AlertDialog(
         elevation: 0,
-        insetPadding: EdgeInsets.all(12),
+        insetPadding: const EdgeInsets.all(12),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         backgroundColor: const Color(0xFF123563).withOpacity(0.95),
         content: Container(
@@ -166,7 +166,7 @@ class _RewardState extends State<Reward> {
                         height: 25,
                       ),
                       Scratcher(
-                        color: Color(0xff123563),
+                        color: const Color(0xff123563),
                         accuracy: ScratchAccuracy.low,
                         brushSize: 50,
                         onScratchStart: () {
@@ -176,27 +176,21 @@ class _RewardState extends State<Reward> {
                         },
                         image: Image.asset(
                           'assets/images/scratchcard.png',
-                          fit: BoxFit.fill,
                         ),
                         child: Container(
-                          height: 260,
-                          width: 250,
+                          height: 245,
+                          width: 240,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(18)),
                           child: Container(
-                            height: 260,
-                            width: 250,
                             decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(14)),
                             child: Column(
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset(
-                                    'assets/images/brainy.png',
-                                    fit: BoxFit.contain,
-                                  ),
+                                Image.asset(
+                                  'assets/images/brainy.png',
+                                  fit: BoxFit.contain,
                                 ),
                                 const Text(
                                   'BRAINY',
@@ -205,7 +199,7 @@ class _RewardState extends State<Reward> {
                                       fontSize: 20,
                                       color: Color(0xff2E8BF7)),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 5,
                                 ),
                                 const Text(
@@ -221,11 +215,11 @@ class _RewardState extends State<Reward> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       text
-                          ? Text(
+                          ? const Text(
                               'Scratch to know what you won!',
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
@@ -233,7 +227,7 @@ class _RewardState extends State<Reward> {
                                 color: Colors.white,
                               ),
                             )
-                          : SizedBox()
+                          : const SizedBox()
                     ],
                   ),
                 ),

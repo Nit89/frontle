@@ -3,7 +3,7 @@ import 'package:frontle/screens/screen1.dart';
 import 'package:frontle/utils/dimension.dart';
 
 class TEST extends StatefulWidget {
-  TEST({Key? key}) : super(key: key);
+  const TEST({Key? key}) : super(key: key);
 
   @override
   State<TEST> createState() => _TESTState();
@@ -36,9 +36,9 @@ class _TESTState extends State<TEST> {
                   style: TextStyle(
                       fontSize: Dimension.height18,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff2E8BF7)),
+                      color: const Color(0xff2E8BF7)),
                 ),
-                Icon(
+                const Icon(
                   Icons.info_outline_rounded,
                   color: Color(0xff707070),
                 )
@@ -81,7 +81,7 @@ class _TESTState extends State<TEST> {
                           scrollDirection: Axis.horizontal,
                           children: [
                             CircleAvatar(
-                              backgroundColor: Color(0xff2E8BF7),
+                              backgroundColor: const Color(0xff2E8BF7),
                               radius: Dimension.radius30,
                               child: CircleAvatar(
                                 radius: Dimension.radius22,
@@ -92,7 +92,7 @@ class _TESTState extends State<TEST> {
                               width: Dimension.height30,
                             ),
                             CircleAvatar(
-                              backgroundColor: Color(0xff2E8BF7),
+                              backgroundColor: const Color(0xff2E8BF7),
                               radius: Dimension.radius30,
                               child: CircleAvatar(
                                 radius: Dimension.radius22,
@@ -103,7 +103,7 @@ class _TESTState extends State<TEST> {
                               width: Dimension.height30,
                             ),
                             CircleAvatar(
-                              backgroundColor: Color(0xff2E8BF7),
+                              backgroundColor: const Color(0xff2E8BF7),
                               radius: Dimension.radius30,
                               child: CircleAvatar(
                                 radius: Dimension.radius22,
@@ -114,7 +114,7 @@ class _TESTState extends State<TEST> {
                               width: Dimension.height30,
                             ),
                             CircleAvatar(
-                              backgroundColor: Color(0xff2E8BF7),
+                              backgroundColor: const Color(0xff2E8BF7),
                               radius: Dimension.radius30,
                               child: CircleAvatar(
                                 radius: Dimension.radius22,
@@ -125,7 +125,7 @@ class _TESTState extends State<TEST> {
                               width: Dimension.height30,
                             ),
                             CircleAvatar(
-                              backgroundColor: Color(0xff2E8BF7),
+                              backgroundColor: const Color(0xff2E8BF7),
                               radius: Dimension.radius30,
                               child: CircleAvatar(
                                 radius: Dimension.radius22,
