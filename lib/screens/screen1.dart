@@ -6,6 +6,8 @@ import 'package:frontle/screens/cluescreen.dart';
 import 'package:frontle/screens/history.dart';
 import 'package:frontle/screens/historyscreen.dart';
 import 'package:frontle/screens/info.dart';
+import 'package:frontle/screens/rightresult.dart';
+import 'package:frontle/screens/wrongresult.dart';
 
 class FrontleScreen extends StatefulWidget {
   const FrontleScreen({Key? key}) : super(key: key);
@@ -20,7 +22,17 @@ class _FrontleScreenState extends State<FrontleScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff123563),
-        title: const Text('FRONTLYNE'),
+        title: GestureDetector(
+            onTap: (() {
+              showDialog(
+                barrierColor: Colors.transparent,
+                context: context,
+                builder: (context) {
+                  return WrongtResult();
+                },
+              );
+            }),
+            child: const Text('FRONTLYNE')),
         centerTitle: true,
         elevation: 0,
       ),
@@ -60,12 +72,23 @@ class _FrontleScreenState extends State<FrontleScreen> {
                     ),
                   ],
                 ),
-                const Text(
-                  "FRONTLE",
-                  style: TextStyle(
-                      fontSize: 27,
-                      color: Color(0xff123563),
-                      fontWeight: FontWeight.w500),
+                GestureDetector(
+                  onTap: (() {
+                    showDialog(
+                      barrierColor: Colors.transparent,
+                      context: context,
+                      builder: (context) {
+                        return RightResult();
+                      },
+                    );
+                  }),
+                  child: const Text(
+                    "FRONTLE",
+                    style: TextStyle(
+                        fontSize: 27,
+                        color: Color(0xff123563),
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
                 GestureDetector(
                   onTap: (() {

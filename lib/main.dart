@@ -2,7 +2,10 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:frontle/controller.dart';
 import 'package:frontle/screens/frontlyne_content.dart';
+import 'package:frontle/screens/rightresult.dart';
+import 'package:frontle/screens/screen1.dart';
 import 'package:frontle/screens/test.dart';
+import 'package:frontle/screens/wrongresult.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const HomePage(),
+        home: HomePage(),
         // initialRoute: '/',
         // routes: {
         //   '/': (context) => TEST(),
